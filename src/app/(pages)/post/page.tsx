@@ -44,7 +44,7 @@ export default function Page() {
 
         <Link href={"/post/add"} className="p-3 rounded-lg border-2 border-teal-300 hover:bg-gray-400 text-xl">Add Blog</Link>
     </div>
-      <div className=" mt-11 w-full h-screen flex flex-wrap  justify-center items-center  gap-11">
+      <div className=" mt-11 w-full h-screen flex flex-wrap  justify-center items-start  gap-11">
         {data?.map((item)=>{
           return(
 

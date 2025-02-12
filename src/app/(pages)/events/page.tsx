@@ -26,7 +26,7 @@ export default function Page() {
     <div className="w-full flex justify-center items-center">
 
 
-      <div className=" mt-11 w-[95%]  h-screen flex flex-wrap  lg:justify-start justify-center items-center  gap-11">
+      <div className=" mt-11 w-[95%]  h-screen flex flex-wrap   justify-center items-start  gap-11">
         {data?.map((item)=>(
 
             <Link href={`/post/${item.num}`} key={item.num} className=" m-2 lg:w-[30%] md:w-[45%] sm:w-[60%] w-[90%] h-[200px] rounded-xl flex justify-center items-center border-2 border-gray-400 relative">
@@ -39,7 +39,7 @@ export default function Page() {
             alt="loading"
             className="h-full w-full object-cover rounded-lg absolute"
           />
-          <div className="w-full text-4xl font-semibold text-black h-full bg-teal-300 flex justify-center items-center opacity-0 hover:opacity-50 duration-500 z-10 rounded-lg">
+          <div className="w-full sm:flex hidden text-4xl font-semibold text-black h-full bg-teal-300  justify-center items-center opacity-0 hover:opacity-50 duration-500 z-10 rounded-lg">
             View
           </div>
         </Link>

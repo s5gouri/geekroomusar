@@ -6,7 +6,7 @@ export default function Navbar() {
   return (
     <>
       <div className="w-full h-[10vh] flex justify-between items-center gap-4 bg-teal-00">
-        <div className="h-full sm:w-[10vw] w-[20vw] flex justify-center items-center sm:ms-0 ms-[40px]">
+        <Link href={"/"} className="h-full sm:w-[10vw] w-[20vw] flex justify-center items-center sm:ms-0 ms-[40px]">
           <Image
             src={"/geeklogo.png"}
             height={90}
@@ -14,7 +14,7 @@ export default function Navbar() {
             alt="..loading"
             className="m-2 sm:w-auto w-[70%]"
           />
-        </div>
+        </Link>
         <div className=" sm:flex hidden gap-3  h-full  justify-center items-center me-2">
           <Link href={"/"} className="mx-1  text-xl hover:text-teal-500 group relative duration-500">
             Home
@@ -49,15 +49,15 @@ export default function Navbar() {
           </button>
           {open && (
             <div className="flex mt-[200px]  flex-col justify-center items-center bg-white border-2 border-gray-400 rounded-xl me-3 z-[10] ">
-              <button onClick={()=>setopen(false)} className=" text-2xl hover:text-teal-500 group relative duration-500 m-1 mx-3">
+              <Link href={"/"} onClick={()=>setopen(false)} className=" text-2xl hover:text-teal-500 group relative duration-500 m-1 mx-3">
                 Home
-              </button>
+              </Link>
               <button onClick={()=>setopen(false)} className=" text-2xl hover:text-teal-500 group relative duration-500 m-1 mx-3">
                 About
               </button>
-              <button onClick={()=>setopen(false)} className=" text-2xl hover:text-teal-500 group relative duration-500 m-1 mx-3">
+              <Link href={"/events"} onClick={()=>setopen(false)} className=" text-2xl hover:text-teal-500 group relative duration-500 m-1 mx-3">
                 Events
-              </button>
+              </Link>
               <button onClick={()=>setopen(false)} className=" text-2xl hover:text-teal-500 group relative duration-500 m-1 mx-3">
                 Contact
               </button>

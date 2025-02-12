@@ -72,6 +72,11 @@ export default function Page() {
             uploadPreset="just trying"
             onSuccess={(results) => {
               sethTemp((results?.info as cloudinaryurl)?.secure_url as string);
+              
+            }}
+            onClose={()=>{
+              document.body.style.overflow = "auto";
+
             }}
           >
             {({ open }) => (
@@ -117,6 +122,10 @@ export default function Page() {
                     onSuccess={(results) => {
                       setImages((prevImages) => [...prevImages, (results?.info as cloudinaryurl)?.secure_url as string]);
                     }}
+                    onClose={()=>{
+                      document.body.style.overflow = "auto";
+
+                    }}
                     
                   >
                     {({ open }) => (
@@ -150,31 +159,7 @@ export default function Page() {
                             height={100}
                             className="w-full rounded-lg"
                           />
-                        </div> <div className="w-[40%] h-auto" >
-                          <Image
-                            src={"https://images.unsplash.com/photo-1492571350019-22de08371fd3?auto=format&fit=crop&q=80&w=1200" as string}
-                            alt="loading"
-                            width={100}
-                            height={100}
-                            className="w-full rounded-lg"
-                          />
-                        </div> <div className="w-[40%] h-auto" >
-                          <Image
-                            src={"https://images.unsplash.com/photo-1492571350019-22de08371fd3?auto=format&fit=crop&q=80&w=1200" as string}
-                            alt="loading"
-                            width={100}
-                            height={100}
-                            className="w-full rounded-lg"
-                          />
-                        </div> <div className="w-[40%] h-auto" >
-                          <Image
-                            src={"https://images.unsplash.com/photo-1492571350019-22de08371fd3?auto=format&fit=crop&q=80&w=1200" as string}
-                            alt="loading"
-                            width={100}
-                            height={100}
-                            className="w-full rounded-lg"
-                          />
-                        </div>
+                        </div> 
                   </div>
                 </div>
 
@@ -182,25 +167,10 @@ export default function Page() {
                 <div className="w-full bg-repeat-round lg:w-1/2 bg-red-00 p-6 flex flex-col h-[500px] justify-center ">
                   <textarea
                     name="desc"
+                    placeholder="Start typing here"
                     className="w-full noscroll p-4 border-2 border-gray-400 rounded-lg h-full text-gray-600 text-base text-center sm:text-lg leading-relaxed"
                   >
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Quos voluptate vel, enim dolorum iste doloribus, dolorem
-                    voluptas dignissimos cupiditate adipisci amet aliquid eaque
-                    aperiam impedit necessitatibus? Vero atque voluptatem aut!
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Ullam ipsum temporibus, aliquid architecto dolores in ea ut
-                    debitis repudiandae iste ipsa deleniti repellendus
-                    laboriosam eos delectus ratione eius accusantium illo?
-                    Facere rerum accusantium similique officia tenetur
-                    laboriosam aspernatur praesentium velit impedit quas aliquam
-                    corporis sed debitis hic dolore ipsa quos saepe fuga iste,
-                    excepturi soluta enim odio. Sequi, consequuntur cumque. Iste
-                    error dignissimos veniam ab reprehenderit tenetur, quisquam
-                    quam praesentium ex molestias laborum incidunt, inventore
-                    maiores possimus deserunt qui aliquid? Explicabo doloribus
-                    mollitia, a aliquid accusamus ullam? Impedit, quibusdam
-                    sint?
+                    
                   </textarea>
                 </div>
               </div>

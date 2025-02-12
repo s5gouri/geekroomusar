@@ -25,6 +25,18 @@ export default function Page() {
     }
     view()
   }, []);
+  const sendDelete=async(number :string)=>{
+    console.log(number)
+    try{
+      const res=await axios.post('/api/delete',{num:number})
+      if(res.data.success){
+        alert("Deleted Successfully")
+        route.refresh()
+      }
+    }catch{
+      alert("Something went wrong")
+
+  }}
   return (
     <>
     <Navbar/>
@@ -46,8 +58,8 @@ export default function Page() {
             alt="loading"
             className="h-full w-full object-cover rounded-lg absolute"
           />
-          <div className="w-full h-full bg-teal-300 flex justify-center items-center opacity-0 hover:opacity-50 duration-500 z-10 rounded-lg">
-            <button>
+          <div className="w-full h-full bg-teal-300 flex justify-center items-center sm:opacity-0 hover:opacity-50 opacity-50  duration-500 z-10 rounded-lg">
+            <button onClick={()=>{sendDelete(item.num)}}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="40"

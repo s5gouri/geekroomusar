@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React, { useState } from "react";
-
+import Link from "next/link";
 export default function Navbar() {
   const [open, setopen] = useState<boolean>(false);
   return (
@@ -16,18 +16,18 @@ export default function Navbar() {
           />
         </div>
         <div className=" sm:flex hidden gap-3  h-full  justify-center items-center me-2">
-          <button className="mx-1  text-xl hover:text-teal-500 group relative duration-500">
+          <Link href={"/"} className="mx-1  text-xl hover:text-teal-500 group relative duration-500">
             Home
             <span className="absolute left-0 bottom-[-3px] w-0 h-[2px] bg-teal-500 transition-all duration-500 ease-in-out group-hover:w-full group-hover:opacity-100 opacity-0"></span>
-          </button>
+          </Link>
           <button className="mx-1 text-xl hover:text-teal-500 group relative duration-500">
             About
             <span className="absolute left-0 bottom-[-3px] w-0 h-[2px] bg-teal-500 transition-all duration-500 ease-in-out group-hover:w-full group-hover:opacity-100 opacity-0"></span>
           </button>
-          <button className="mx-1 text-xl hover:text-teal-500 group relative duration-500">
+          <Link href={"/events"} className="mx-1 text-xl hover:text-teal-500 group relative duration-500">
             Events
             <span className="absolute left-0 bottom-[-3px] w-0 h-[2px] bg-teal-500 transition-all duration-500 ease-in-out group-hover:w-full group-hover:opacity-100 opacity-0"></span>
-          </button>
+          </Link>
           <button className="mx-1 text-xl hover:text-teal-500 group relative duration-500">
             Contact
             <span className="absolute left-0 bottom-[-3px] w-0 h-[2px] bg-teal-500 transition-all duration-500 ease-in-out group-hover:w-full group-hover:opacity-100 opacity-0"></span>
@@ -48,7 +48,7 @@ export default function Navbar() {
             </svg>
           </button>
           {open && (
-            <div className="flex mt-[200px]  flex-col justify-center items-center bg-white border-2 border-gray-400 rounded-xl me-3 ">
+            <div className="flex mt-[200px]  flex-col justify-center items-center bg-white border-2 border-gray-400 rounded-xl me-3 z-[10] ">
               <button onClick={()=>setopen(false)} className=" text-2xl hover:text-teal-500 group relative duration-500 m-1 mx-3">
                 Home
               </button>

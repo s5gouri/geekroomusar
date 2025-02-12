@@ -1,19 +1,20 @@
 "use client";
-import CountUp from "@/components/TextAnimations/CountUp/CountUp";
-
+import React from "react";
+import { CldUploadWidget } from "next-cloudinary";
 
 export default function Page() {
-    return (
-     <>
-
-<CountUp
-  from={0}
-  to={100}
-  separator=","
-  direction="up"
-  duration={1}
-  className="count-up-text"
-/></>
-    );
-  }
-  
+  return (
+    <div>
+      <CldUploadWidget
+        uploadPreset="just trying"
+        onSuccess={(results) => {
+          console.log("Uploaded Image URL:", results);
+        }}
+      >
+        {({ open }) => (
+          <button onClick={() => open()}>Upload an Image</button>
+        )}
+      </CldUploadWidget>
+    </div>
+  );
+}
